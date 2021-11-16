@@ -15,6 +15,7 @@ public class Util {
         try {
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            connection.setAutoCommit(false);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
